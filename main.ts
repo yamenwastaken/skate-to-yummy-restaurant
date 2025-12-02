@@ -39,7 +39,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     game.reset()
 })
-browserEvents.Space.onEvent(browserEvents.KeyEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(gameStart)) {
         gameStart = true
         kittyOnGround = true
@@ -94,6 +94,9 @@ browserEvents.Space.onEvent(browserEvents.KeyEvent.Pressed, function () {
             gameStart = true
         }
     }
+})
+browserEvents.Space.onEvent(browserEvents.KeyEvent.Pressed, function () {
+	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     kittyriding = sprites.create(assets.image`gameoverkitty`, SpriteKind.Player)
